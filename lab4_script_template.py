@@ -1,10 +1,14 @@
-
+import sys
 def main():
     log_file = get_log_file_path_from_cmd_line()
 
 # TODO: Step 3
 def get_log_file_path_from_cmd_line():
-    return
+    if len(sys.argv) < 2:
+        print("Usage: python script.py <log_file_path>")
+        sys.exit(1)
+    return sys.argv[1]
+
 
 # TODO: Steps 4-7
 def filter_log_by_regex(log_file, regex, ignore_case=True, print_summary=False, print_records=False):
